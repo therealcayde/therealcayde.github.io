@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Krishna Prasad — Senior Software Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --bg:       #F5F4EF;
+  --surface:  #FFFFFF;
+  --surface2: #F9F8F5;
+  --ink:      #111110;
+  --ink2:     #56544E;
+  --ink3:     #9C9A93;
+  --acc:      #3730A3;
+  --accl:     #EEF2FF;
+  --accm:     #6366F1;
+  --border:   #E4E2DB;
+  --borderS:  #C9C7BF;
+  --shadow:   0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadowM:  0 4px 16px rgba(0,0,0,0.07), 0 1px 4px rgba(0,0,0,0.05);
+  --shadowL:  0 8px 32px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04);
+}
+
+html{scroll-behavior:smooth}
+
+body{
+  font-family:'DM Sans',sans-serif;
+  font-weight:300;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  font-size:16px;
+}
+
+/* progress */
+#bar{
+  position:fixed;top:0;left:0;height:2px;width:0%;
+  background:var(--acc);z-index:1000;
+  transition:width 0.09s linear;
+}
+
+/* ── NAV ── */
+nav{
+  position:sticky;top:0;z-index:200;
+  background:rgba(245,244,239,0.93);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+}
+.nav-in{
+  max-width:1040px;margin:0 auto;padding:0 2.5rem;
+  height:58px;display:flex;align-items:center;justify-content:space-between;
+}
+.nav-logo{
+  font-family:'Instrument Serif',serif;
+  font-size:1.05rem;font-weight:400;
+  color:var(--ink);text-decoration:none;letter-spacing:-0.01em;
+}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{
+  font-size:0.82rem;font-weight:400;
+  color:var(--ink3);text-decoration:none;
+  letter-spacing:0.01em;transition:color 0.18s;
+}
+.nav-links a:hover{color:var(--ink)}
+.nav-btn{
+  font-size:0.8rem;font-weight:400;
+  color:var(--acc);text-decoration:none;
+  border:1px solid currentColor;border-radius:6px;
+  padding:0.38rem 1rem;transition:all 0.2s;letter-spacing:0.01em;
+}
+.nav-btn:hover{background:var(--acc);color:#fff;border-color:var(--acc)}
+
+/* ── LAYOUT ── */
+main{max-width:1040px;margin:0 auto;padding:0 2.5rem}
+section{padding:5.5rem 0;border-bottom:1px solid var(--border)}
+
+.slabel{
+  font-family:'JetBrains Mono',monospace;
+  font-size:0.68rem;font-weight:500;
+  color:var(--ink3);letter-spacing:0.12em;
+  text-transform:uppercase;margin-bottom:0.7rem;
+}
+h2.sh{
+  font-family:'Instrument Serif',serif;
+  font-size:clamp(2rem,4vw,2.8rem);
+  font-weight:400;font-style:italic;
+  letter-spacing:-0.02em;line-height:1.15;
+  color:var(--ink);margin-bottom:3rem;
+}
+
+/* ── HERO ── */
+.hero{padding:7rem 0 5.5rem;border-bottom:1px solid var(--border)}
+
+.hero-badge{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  font-family:'JetBrains Mono',monospace;
+  font-size:0.7rem;font-weight:500;color:var(--acc);
+  background:var(--accl);border:1px solid #C7D2FE;
+  border-radius:100px;padding:0.35rem 0.9rem;
+  margin-bottom:2.25rem;letter-spacing:0.05em;
+}
+.hero-badge-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--accm);
+  animation:pulse 2.2s ease-in-out infinite;
+}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.8)}}
+
+h1.hname{
+  font-family:'Instrument Serif',serif;
+  font-size:clamp(4rem,9vw,6.5rem);
+  font-weight:400;font-style:italic;
+  line-height:1.0;letter-spacing:-0.035em;
+  color:var(--ink);margin-bottom:0.25rem;
+}
+h1.hname em{color:var(--acc);font-style:inherit}
+
+.hrole{
+  font-size:1rem;font-weight:300;
+  color:var(--ink2);margin-bottom:2.5rem;
+  letter-spacing:0.01em;
+}
+.hrole .sep{color:var(--ink3);margin:0 0.55rem}
+
+.hbio{
+  max-width:600px;font-size:1.05rem;
+  line-height:1.85;color:var(--ink2);
+  margin-bottom:3rem;font-weight:300;
+}
+
+.hmeta{display:flex;flex-wrap:wrap;gap:0.5rem 2rem}
+.hmeta-i{
+  font-family:'JetBrains Mono',monospace;
+  font-size:0.72rem;color:var(--ink3);
+  display:flex;align-items:center;gap:0.5rem;
+}
+.hmeta-i::before{content:'→';color:var(--acc)}
+
+/* ── SUMMARY ── */
+.sumbox{
+  background:var(--surface);border:1px solid var(--border);
+  border-left:3px solid var(--acc);
+  border-radius:0 10px 10px 0;
+  padding:2rem 2.25rem;
+  font-size:1rem;line-height:1.9;color:var(--ink2);
+  box-shadow:var(--shadow);
+}
+
+/* ── EXPERIENCE ── */
+.expwrap{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:12px;padding:2.5rem;
+  box-shadow:var(--shadow);
+}
+.exp-top{
+  display:flex;justify-content:space-between;
+  align-items:flex-start;flex-wrap:wrap;
+  gap:1rem;margin-bottom:0.3rem;
+}
+.exp-co{font-size:1.15rem;font-weight:500;color:var(--ink);letter-spacing:-0.01em}
+.exp-date{
+  font-family:'JetBrains Mono',monospace;
+  font-size:0.7rem;color:var(--ink3);
+  letter-spacing:0.07em;white-space:nowrap;margin-top:0.2rem;
+  background:var(--surface2);border:1px solid var(--border);
+  border-radius:4px;padding:0.25rem 0.65rem;
+}
+.exp-role{font-size:0.9rem;color:var(--acc);font-weight:400;margin-bottom:0.25rem}
+.exp-loc{
+  font-family:'JetBrains Mono',monospace;
+  font-size:0.68rem;color:var(--ink3);
+  letter-spacing:0.06em;margin-bottom:2rem;
+}
+.exp-hr{border:none;border-top:1px solid var(--border);margin:2rem 0}
+.subsec{
+  font-family:'JetBrains Mono',monospace;
+  font-size:0.65rem;font-weight:500;color:var(--ink3);
+  letter-spacing:0.14em;text-transform:uppercase;margin-bottom:1rem;
+}
+
+.blist{list-style:none;display:flex;flex-direction:column;gap:0.7rem}
+.blist li{
+  font-size:0.95rem;line-height:1.8;color:var(--ink2);
+  padding-left:1.5rem;position:relative;font-weight:300;
+}
+.blist li::before{
+  content:'';position:absolute;left:0;top:0.72rem;
+  width:5px;height:5px;border-radius:50%;
+  background:var(--acc);flex-shrink:0;
+}
+.blist li strong{color:var(--ink);font-weight:500}
+
+/* ── ACHIEVEMENT CARDS ── */
+.acard{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:12px;padding:2.25rem 2.5rem;
+  margin-bottom:1.25rem;position:relative;overflow:hidden;
+  box-shadow:var(--shadow);
+  transition:border-color 0.25s,box-shadow 0.25s,transform 0.25s;
+}
+.acard::before{
+  content:'';position:absolute;
+  left:0;top:16px;bottom:16px;width:3px;
+  background:var(--acc);border-radius:0 2px 2px 0;
+}
+.acard:hover{
+  border-color:var(--borderS);
+  box-shadow:var(--shadowL);
+  transform:translateY(-2px);
+}
+.atitle{
+  font-size:1.05rem;font-weight:500;
+  color:var(--ink);margin-bottom:0.85rem;
+  letter-spacing:-0.01em;line-height:1.4;
+}
+.ametric{
+  display:inline-flex;align-items:center;gap:0.45rem;
+  font-family:'JetBrains Mono',monospace;
+  font-size:0.7rem;font-weight:500;color:var(--acc);
+  background:var(--accl);border:1px solid #C7D2FE;
+  border-radius:4px;padding:0.3rem 0.75rem;margin-bottom:1.2rem;
+  letter-spacing:0.04em;
+}
+.ametric::before{content:'↑'}
+.adesc{
+  font-size:0.95rem;line-height:1.85;
+  color:var(--ink2);margin-bottom:1.5rem;font-weight:300;
+}
+
+.tags{display:flex;flex-wrap:wrap;gap:0.45rem}
+.tag{
+  font-family:'JetBrains Mono',monospace;
+  font-size:0.68rem;padding:0.27rem 0.7rem;
+  border-radius:5px;background:var(--accl);
+  border:1px solid #C7D2FE;
+  color:var(--acc);font-weight:400;letter-spacing:0.03em;
+}
+.tag.s{
+  background:var(--surface2);border:1px solid var(--border);color:var(--ink2);
+}
+
+/* ── BRAG GRID ── */
+.bgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.1rem}
+.bcard{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:12px;padding:1.75rem;
+  box-shadow:var(--shadow);
+  transition:border-color 0.22s,box-shadow 0.22s,transform 0.22s;
+}
+.bcard:hover{border-color:var(--borderS);box-shadow:var(--shadowM);transform:translateY(-1px)}
+.bicon{
+  width:36px;height:36px;border-radius:8px;
+  background:var(--accl);border:1px solid #C7D2FE;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1rem;margin-bottom:1rem;
+}
+.btitle{font-size:0.9rem;font-weight:500;color:var(--ink);margin-bottom:0.45rem;letter-spacing:-0.01em}
+.bdesc{font-size:0.85rem;line-height:1.75;color:var(--ink2);font-weight:300}
+
+/* ── TECH GRID ── */
+.tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1.1rem}
+.tgroup{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:10px;padding:1.5rem;box-shadow:var(--shadow);
+}
+.tglabel{
+  font-family:'JetBrains Mono',monospace;
+  font-size:0.63rem;font-weight:500;color:var(--ink3);
+  letter-spacing:0.14em;text-transform:uppercase;
+  margin-bottom:1rem;padding-bottom:0.75rem;
+  border-bottom:1px solid var(--border);
+}
+.titem{
+  font-size:0.9rem;color:var(--ink2);
+  padding:0.27rem 0;display:flex;align-items:center;gap:0.55rem;font-weight:300;
+}
+.titem::before{
+  content:'';width:5px;height:5px;border-radius:50%;
+  background:var(--acc);flex-shrink:0;
+}
+.titem.hi{color:var(--ink);font-weight:500}
+
+/* ── METRICS ── */
+.mgrid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));
+  gap:1.1rem;margin-bottom:3rem;
+}
+.mcard{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:10px;padding:1.75rem 1.5rem;text-align:center;
+  box-shadow:var(--shadow);
+  transition:border-color 0.2s,box-shadow 0.2s,transform 0.2s;
+}
+.mcard:hover{border-color:var(--borderS);box-shadow:var(--shadowM);transform:translateY(-1px)}
+.mnum{
+  font-family:'Instrument Serif',serif;
+  font-size:3rem;font-weight:400;font-style:italic;
+  line-height:1;color:var(--acc);
+  letter-spacing:-0.03em;margin-bottom:0.5rem;
+}
+.msub{
+  font-family:'JetBrains Mono',monospace;
+  font-size:0.62rem;color:var(--ink3);
+  letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.35rem;
+}
+.mlabel{font-size:0.82rem;line-height:1.55;color:var(--ink2);font-weight:300}
+
+.doms{display:flex;flex-wrap:wrap;gap:0.65rem}
+.dpill{
+  font-size:0.85rem;padding:0.5rem 1.1rem;
+  border:1px solid var(--borderS);border-radius:100px;
+  color:var(--ink2);transition:all 0.2s;cursor:default;
+  background:var(--surface);
+}
+.dpill:hover{background:var(--acc);border-color:var(--acc);color:#fff}
+
+/* ── FOOTER ── */
+footer{
+  max-width:1040px;margin:0 auto;
+  padding:2.5rem 2.5rem 3.5rem;
+  display:flex;align-items:center;
+  justify-content:space-between;flex-wrap:wrap;gap:1rem;
+}
+.fname{font-size:0.85rem;color:var(--ink3);font-weight:300}
+.flinks{display:flex;gap:1.5rem}
+.flinks a{
+  font-size:0.8rem;color:var(--ink3);text-decoration:none;
+  letter-spacing:0.02em;transition:color 0.2s;font-weight:400;
+}
+.flinks a:hover{color:var(--acc)}
+
+/* ── DIVIDER WITH TEXT ── */
+.section-intro{
+  font-size:0.95rem;color:var(--ink3);
+  font-style:italic;font-family:'Instrument Serif',serif;
+  margin-top:-2rem;margin-bottom:2.5rem;
+}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:680px){
+  .nav-links,.nav-btn{display:none}
+  .hero{padding:4.5rem 0 3.5rem}
+  section{padding:4rem 0}
+  main{padding:0 1.5rem}
+  footer{padding:2rem 1.5rem 3rem}
+}
+@media print{
+  nav,#bar{display:none}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+
+<nav>
+  <div class="nav-in">
+    <a href="#top" class="nav-logo">Krishna Prasad</a>
+    <ul class="nav-links">
+      <li><a href="#summary">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#highlights">Edge</a></li>
+      <li><a href="#stack">Stack</a></li>
+      <li><a href="#impact">Impact</a></li>
+    </ul>
+    <a href="mailto:krishnaprasadr197@gmail.com" class="nav-btn">Get in touch</a>
+  </div>
+</nav>
+
+<main>
+
+<!-- ── HERO ── -->
+<div class="hero" id="top">
+  <div class="hero-badge">
+    <span class="hero-badge-dot"></span>
+    Senior Software Developer · Fintech &amp; Payment Systems
+  </div>
+
+  <h1 class="hname">Krishna<br><em>Prasad</em></h1>
+  <p class="hrole">
+    C++ / Go
+    <span class="sep">·</span>
+    Financial Switch
+    <span class="sep">·</span>
+    Visa · Mastercard · UPI
+    <span class="sep">·</span>
+    Distributed Infrastructure
+  </p>
+  <p class="hbio">
+    4+ years building mission-critical payment infrastructure from the ground up.
+    I work at the intersection of systems programming and financial technology —
+    designing and optimizing the backend systems that process real-money transactions
+    at scale across Visa, Mastercard, and UPI networks on Unix-based infrastructure.
+  </p>
+  <div class="hmeta">
+    <span class="hmeta-i">Bengaluru, India</span>
+    <span class="hmeta-i">Volane International · Mar 2022 – Present</span>
+    <span class="hmeta-i">C++ · Go · Oracle · Unix</span>
+    <span class="hmeta-i">ISO 8583 · EFT/POS Switch · EMV 3DS</span>
+  </div>
+</div>
+
+<!-- ── PROFESSIONAL SUMMARY ── -->
+<section id="summary" class="reveal">
+  <p class="slabel">Professional Summary</p>
+  <h2 class="sh">The elevator pitch</h2>
+  <div class="sumbox">
+    Results-driven Software Developer with 4+ years of hands-on experience in C++ development
+    within the financial switch and payment processing domain. Proven track record of designing,
+    building, and optimizing mission-critical payment systems integrated with leading networks
+    including Visa, Mastercard, and UPI. Experienced in EFT/POS switch environments, 3D Secure
+    authentication, fraud management, and multi-architecture system development across both
+    microservices and monolithic platforms. Strong command of Unix-based development environments
+    and SQL databases, with a demonstrated ability to translate complex business requirements into
+    scalable, high-performance software solutions.
+  </div>
+</section>
+
+<!-- ── EXPERIENCE ── -->
+<section id="experience" class="reveal">
+  <p class="slabel">Work Experience</p>
+  <h2 class="sh">Where I've built things</h2>
+
+  <div class="expwrap">
+    <div class="exp-top">
+      <div>
+        <p class="exp-co">Volane International</p>
+        <p class="exp-role">Software Developer — C++ / Payments (Senior)</p>
+        <p class="exp-loc">Bangalore, India</p>
+      </div>
+      <span class="exp-date">Mar 2022 – Present</span>
+    </div>
+
+    <p class="subsec">Financial Switch &amp; Payment Processing</p>
+    <ul class="blist">
+      <li>Developed and maintained <strong>C++ applications for financial EFT/POS switch systems</strong> serving banks and Oil Marketing Companies, processing high-volume real-time transactions on Unix-based infrastructure.</li>
+      <li>Integrated major payment networks — <strong>Visa, Mastercard, and UPI</strong> — into the core switch platform, ensuring full compliance with network specifications and regulatory mandates.</li>
+      <li>Implemented <strong>3D Secure (EMV 3DS) authentication flow for UPI transactions</strong>, strengthening fraud prevention and measurably reducing chargebacks across the payment ecosystem.</li>
+      <li>Designed and developed a <strong>high-throughput SMS notification engine</strong> and its associated system interfaces, enabling real-time transaction alerts for 100,000+ bank customers across client banks.</li>
+      <li>Built a <strong>complete banking application module for Patronus Bank</strong> using an established C++ framework, delivering end-to-end account management and transaction processing capabilities.</li>
+      <li>Integrated the <strong>Stripe payment gateway</strong> for OMC-specific use cases, enabling digital payment acceptance at fuel retail outlets across India.</li>
+      <li>Developed a <strong>Card Personalization (Card Perso) module</strong> for preparing and issuing payment cards — handling card data encoding, EMV chip personalization, magnetic stripe writing, and secure key injection workflows in compliance with card scheme requirements.</li>
+      <li>Designed and developed a <strong>Forecourt Controller (FCC) automation system</strong> for fuel station POS environments — enabling automated fuel dispenser control, pump authorization, and seamless end-to-end integration between forecourt hardware and the payment switch for Oil Marketing Company clients.</li>
+    </ul>
+
+    <hr class="exp-hr">
+
+    <p class="subsec">Systems &amp; Infrastructure Engineering</p>
+    <ul class="blist">
+      <li>Refactored core <strong>transaction lifecycle shared memory structs</strong> using packing and alignment techniques — eliminating compiler-inserted padding and reducing per-process memory footprint with zero functional change.</li>
+      <li>Successfully <strong>migrated core C++ modules to Golang</strong>, improving modularity and accelerating deployment cycles without service interruption on live production systems.</li>
+      <li>Designed and maintained <strong>Oracle database schemas, stored procedures, and query optimizations</strong> for high-throughput transactional workloads in the payment switch.</li>
+      <li>Delivered <strong>end-to-end backend architecture for 6 OMC pilot projects</strong> from scratch — owning system design, API contracts, database schemas, and production deployment for all six simultaneously.</li>
+      <li>Maintained <strong>multi-process Unix architecture with shared memory IPC</strong>, including process lifecycle management, crash recovery, and inter-process communication patterns in a 24/7 financial environment.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ── ACHIEVEMENTS ── -->
+<section id="achievements" class="reveal">
+  <p class="slabel">Key Achievements</p>
+  <h2 class="sh">Work that moved the needle</h2>
+
+  <div class="acard">
+    <p class="atitle">Visa, Mastercard &amp; UPI — Delivered in One Release Cycle</p>
+    <div class="ametric">Enabled go-live for 2 new banking clients on schedule</div>
+    <p class="adesc">Delivered complete payment switch integration for Visa, Mastercard, and UPI within a single release cycle — requiring simultaneous handling of three distinct network specifications, compliance requirements, and certification processes. The delivery directly enabled go-live for 2 new banking clients, a milestone most teams spread across multiple quarters.</p>
+    <div class="tags">
+      <span class="tag">Visa</span><span class="tag">Mastercard</span><span class="tag">UPI</span>
+      <span class="tag">ISO 8583</span><span class="tag s">EFT Switch</span><span class="tag s">Compliance</span>
+    </div>
+  </div>
+
+  <div class="acard">
+    <p class="atitle">Struct Alignment &amp; Memory Optimization — Zero Functional Change</p>
+    <div class="ametric">Reduced per-process memory footprint · No regressions</div>
+    <p class="adesc">Eliminated compiler-inserted padding in critical shared memory structs by reordering member variables for natural alignment. Measurably reduced the per-process memory footprint of the financial switch with zero change to functional behaviour — a precise, surgical optimization that required deep understanding of how C++ compilers lay out memory and its downstream effects on long-running financial processes.</p>
+    <div class="tags">
+      <span class="tag">C++</span><span class="tag">Struct Alignment</span><span class="tag">Memory Optimization</span>
+      <span class="tag">Shared Memory IPC</span><span class="tag s">Performance</span><span class="tag s">Systems Programming</span>
+    </div>
+  </div>
+
+  <div class="acard">
+    <p class="atitle">SMS Notification Engine — Built from Scratch, 100,000+ Bank Customers</p>
+    <div class="ametric">100,000+ customers reached · Real-time transaction alerts</div>
+    <p class="adesc">Designed and built a complete high-throughput SMS notification engine from an empty file — engine logic, system interfaces, and all integration plumbing. Enabled real-time transaction alerts for over 100,000 bank customers and became a core infrastructure component relied upon by every client bank on the platform.</p>
+    <div class="tags">
+      <span class="tag">C++</span><span class="tag">SMS Engine</span><span class="tag">System Interfaces</span>
+      <span class="tag s">Real-time Notifications</span><span class="tag s">Infrastructure</span>
+    </div>
+  </div>
+
+  <div class="acard">
+    <p class="atitle">C++ → Go Migration — Live Production, Zero Downtime</p>
+    <div class="ametric">Faster deployment cycles · Full behavioural parity · No interruption</div>
+    <p class="adesc">Re-engineered and migrated core C++ communication drivers and POS modules into Go on live production systems — one of the highest-risk engineering undertakings in any organization. Delivered full behavioural parity, improved modularity, and measurably faster deployment cycles, with zero service interruption throughout.</p>
+    <div class="tags">
+      <span class="tag">Go</span><span class="tag">C++</span><span class="tag">POS Modules</span>
+      <span class="tag">Legacy Migration</span><span class="tag s">Zero Downtime</span><span class="tag s">Modernization</span>
+    </div>
+  </div>
+
+  <div class="acard">
+    <p class="atitle">Six OMC Pilots — Blank Repo to Production, End-to-End</p>
+    <div class="ametric">6 products · Solo backend ownership · All shipped to production</div>
+    <p class="adesc">Spearheaded backend architecture and full development for 6 high-priority Oil Marketing Company pilot projects simultaneously, each starting from an empty repository. Owned system design, API contracts, database schemas, and production deployment across all six — translating business requirements directly into live systems without a pre-existing playbook.</p>
+    <div class="tags">
+      <span class="tag">System Design</span><span class="tag">Backend Architecture</span><span class="tag">OMC</span>
+      <span class="tag s">PoC to Production</span><span class="tag s">Technical Ownership</span>
+    </div>
+  </div>
+
+  <div class="acard">
+    <p class="atitle">Forecourt Controller (FCC) Automation — Pump-to-Payment at Fuel Stations</p>
+    <div class="ametric">End-to-end dispenser control · Automated pump authorization · OMC clients</div>
+    <p class="adesc">Designed and developed a Forecourt Controller automation system for fuel station POS environments — one of the most hardware-integrated classes of payment software. The system handles automated fuel dispenser control, pump authorization, and the full integration pipeline between forecourt hardware and the payment switch. Built specifically for Oil Marketing Company clients, it enables seamless, automated payment flows at the pump with no manual intervention at the forecourt layer.</p>
+    <div class="tags">
+      <span class="tag">FCC</span><span class="tag">POS</span><span class="tag">Forecourt</span>
+      <span class="tag">Fuel Station Automation</span><span class="tag s">OMC</span><span class="tag s">Hardware Integration</span>
+    </div>
+  </div>
+
+  <div class="acard">
+    <p class="atitle">Card Personalization (Card Perso) Module — EMV Chip &amp; Secure Key Injection</p>
+    <div class="ametric">End-to-end card issuance · EMV compliance · Secure key workflows</div>
+    <p class="adesc">Developed a Card Personalization module for the full payment card issuance lifecycle — handling card data encoding, EMV chip personalization, magnetic stripe writing, and secure key injection workflows in compliance with card scheme requirements. Card Perso sits at the intersection of cryptography, hardware security, and payment standards, making it one of the most sensitive and specialized areas of the payments stack.</p>
+    <div class="tags">
+      <span class="tag">Card Perso</span><span class="tag">EMV</span><span class="tag">Key Injection</span>
+      <span class="tag">Card Issuance</span><span class="tag s">Cryptography</span><span class="tag s">Card Schemes</span>
+    </div>
+  </div>
+
+  <div class="acard">
+    <p class="atitle">EMV 3DS Authentication for UPI — Fraud Reduction at the Switch Layer</p>
+    <div class="ametric">Strengthened fraud prevention · Reduced chargebacks</div>
+    <p class="adesc">Implemented the complete 3D Secure (EMV 3DS) authentication flow for UPI transactions — a security layer sitting at the precise boundary of user experience and fraud management. The implementation strengthened fraud prevention across the UPI channel and measurably reduced chargebacks for client banks in the ecosystem.</p>
+    <div class="tags">
+      <span class="tag">EMV 3DS</span><span class="tag">UPI</span><span class="tag">Fraud Management</span>
+      <span class="tag s">Authentication</span><span class="tag s">Security</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── SENIOR EDGE ── -->
+<section id="highlights" class="reveal">
+  <p class="slabel">Senior-Level Edge</p>
+  <h2 class="sh">What you bring beyond the code</h2>
+  <p class="section-intro">Things every senior fintech engineer owns — but rarely writes down.</p>
+
+  <div class="bgrid">
+    <div class="bcard">
+      <div class="bicon">⚡</div>
+      <p class="btitle">Payment Network Specialist</p>
+      <p class="bdesc">Certified-level fluency in Visa, Mastercard, UPI, and ISO 8583 — a compliance-heavy, certification-gated domain that takes years to develop and is rarely found outside dedicated fintech infrastructure teams.</p>
+    </div>
+    <div class="bcard">
+      <div class="bicon">🔐</div>
+      <p class="btitle">Security &amp; Fraud Domain Depth</p>
+      <p class="bdesc">Implemented EMV 3DS end-to-end and worked directly on fraud management systems — understanding chargeback mechanics, authentication failure modes, and the regulatory obligations surrounding them.</p>
+    </div>
+    <div class="bcard">
+      <div class="bicon">🧠</div>
+      <p class="btitle">Low-Level Systems Mastery</p>
+      <p class="bdesc">Struct packing, memory alignment, heap optimization, and shared memory IPC on Unix — the kind of depth most developers never reach. Directly translates to measurable performance gains on high-frequency transaction systems.</p>
+    </div>
+    <div class="bcard">
+      <div class="bicon">🔄</div>
+      <p class="btitle">Production Migration Veteran</p>
+      <p class="bdesc">Migrated production C++ systems to Go without downtime — the most politically and technically risky class of engineering work. Built the instinct for managing risk and rollback in always-on, regulated environments.</p>
+    </div>
+    <div class="bcard">
+      <div class="bicon">🚨</div>
+      <p class="btitle">Production Incident Ownership</p>
+      <p class="bdesc">Senior engineers on payment systems own on-call response, root cause analysis, and post-mortems for transaction failures. A 5-minute outage affects thousands of real transactions — this builds a reliability mindset no classroom replicates.</p>
+    </div>
+    <div class="bcard">
+      <div class="bicon">📐</div>
+      <p class="btitle">Cross-Architecture Experience</p>
+      <p class="bdesc">Hands-on work across both microservices and monolithic architectures in the same domain — a rare combination that gives a grounded, pragmatic view of when each pattern is genuinely appropriate vs. fashionable.</p>
+    </div>
+    <div class="bcard">
+      <div class="bicon">🗄️</div>
+      <p class="btitle">Database Engineering at Scale</p>
+      <p class="bdesc">Oracle schema design, stored procedures, and query optimization for high-throughput financial workloads — where a slow query directly translates to delayed settlements, failed transactions, or SLA breaches.</p>
+    </div>
+    <div class="bcard">
+      <div class="bicon">🏦</div>
+      <p class="btitle">Banking Client Delivery</p>
+      <p class="bdesc">Delivered complete banking products and integrations for named clients (Patronus Bank, OMC accounts) — fluent in translating bank-side business requirements into spec-compliant, auditable technical systems.</p>
+    </div>
+    <div class="bcard">
+      <div class="bicon">📋</div>
+      <p class="btitle">Compliance-Grade Documentation</p>
+      <p class="bdesc">Operating in a regulated domain means producing technical specifications, integration runbooks, and API documentation — the institutional knowledge that protects teams during audits and client onboarding.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── TECH STACK ── -->
+<section id="stack" class="reveal">
+  <p class="slabel">Technology Arsenal</p>
+  <h2 class="sh">Tools of the trade</h2>
+
+  <div class="tgrid">
+    <div class="tgroup">
+      <div class="tglabel">Languages</div>
+      <div class="titem hi">C++ (Primary)</div>
+      <div class="titem hi">Go (Golang)</div>
+      <div class="titem">SQL</div>
+      <div class="titem">Shell Scripting</div>
+    </div>
+    <div class="tgroup">
+      <div class="tglabel">Payment &amp; Protocols</div>
+      <div class="titem hi">ISO 8583</div>
+      <div class="titem hi">Visa Network</div>
+      <div class="titem hi">Mastercard Network</div>
+      <div class="titem">UPI</div>
+      <div class="titem">3D Secure (EMV 3DS)</div>
+      <div class="titem">EFT / POS Switch</div>
+      <div class="titem">Stripe Gateway</div>
+    </div>
+    <div class="tgroup">
+      <div class="tglabel">Systems &amp; Architecture</div>
+      <div class="titem hi">Shared Memory IPC</div>
+      <div class="titem hi">Multi-process Unix</div>
+      <div class="titem">Microservices</div>
+      <div class="titem">Monolithic Systems</div>
+      <div class="titem">Unix / Linux</div>
+      <div class="titem">Process Management</div>
+    </div>
+    <div class="tgroup">
+      <div class="tglabel">Data &amp; Tooling</div>
+      <div class="titem hi">Oracle DB</div>
+      <div class="titem">Schema Design</div>
+      <div class="titem">Stored Procedures</div>
+      <div class="titem">Query Optimization</div>
+      <div class="titem">Sentry (Monitoring)</div>
+      <div class="titem">Performance Profiling</div>
+    </div>
+    <div class="tgroup">
+      <div class="tglabel">Domain</div>
+      <div class="titem hi">Financial Switch</div>
+      <div class="titem hi">Forecourt Controller (FCC)</div>
+      <div class="titem hi">Card Personalization</div>
+      <div class="titem">Retail Payments</div>
+      <div class="titem">Clearing &amp; Settlement</div>
+      <div class="titem">Fraud Management</div>
+      <div class="titem">Banking Applications</div>
+    </div>
+    <div class="tgroup">
+      <div class="tglabel">Practice</div>
+      <div class="titem">Agile / Scrum</div>
+      <div class="titem">Code Review</div>
+      <div class="titem">Technical Documentation</div>
+      <div class="titem">Performance Optimization</div>
+      <div class="titem">Legacy Modernization</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── IMPACT ── -->
+<section id="impact" class="reveal">
+  <p class="slabel">Impact by the Numbers</p>
+  <h2 class="sh">Tangible, measurable output</h2>
+
+  <div class="mgrid">
+    <div class="mcard">
+      <div class="mnum">4+</div>
+      <div class="msub">Years</div>
+      <div class="mlabel">In fintech &amp; payment infrastructure</div>
+    </div>
+    <div class="mcard">
+      <div class="mnum">100K+</div>
+      <div class="msub">Customers</div>
+      <div class="mlabel">Reached by the SMS engine built from scratch</div>
+    </div>
+    <div class="mcard">
+      <div class="mnum">3</div>
+      <div class="msub">Networks</div>
+      <div class="mlabel">Visa, Mastercard &amp; UPI integrated in one release cycle</div>
+    </div>
+    <div class="mcard">
+      <div class="mnum">6</div>
+      <div class="msub">Products</div>
+      <div class="mlabel">OMC pilots taken from blank repo to production</div>
+    </div>
+    <div class="mcard">
+      <div class="mnum">2</div>
+      <div class="msub">Clients</div>
+      <div class="mlabel">New banking clients enabled to go-live</div>
+    </div>
+    <div class="mcard">
+      <div class="mnum">0</div>
+      <div class="msub">Downtime</div>
+      <div class="mlabel">During the C++ → Go production migration</div>
+    </div>
+  </div>
+
+  <div class="doms">
+    <span class="dpill">Financial Switch</span>
+    <span class="dpill">EFT / POS</span>
+    <span class="dpill">Forecourt Controller</span>
+    <span class="dpill">Card Personalization</span>
+    <span class="dpill">EMV / Chip Cards</span>
+    <span class="dpill">Retail Payments</span>
+    <span class="dpill">Fraud Management</span>
+    <span class="dpill">3D Secure</span>
+    <span class="dpill">Clearing &amp; Settlement</span>
+    <span class="dpill">Banking Applications</span>
+    <span class="dpill">Systems Programming</span>
+    <span class="dpill">Legacy Modernization</span>
+    <span class="dpill">Performance Engineering</span>
+    <span class="dpill">Distributed Architecture</span>
+    <span class="dpill">Unix Infrastructure</span>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <span class="fname">Krishna Prasad · Senior Software Developer · Bengaluru, 2025</span>
+  <div class="flinks">
+    <a href="mailto:krishnaprasadr197@gmail.com">Email</a>
+    <a href="https://www.linkedin.com/in/krishnaprasad-r/" target="_blank">LinkedIn</a>
+    <a href="https://github.com/therealcayde" target="_blank">GitHub</a>
+  </div>
+</footer>
+
+<script>
+  window.addEventListener('scroll',()=>{
+    const p=window.scrollY/(document.body.scrollHeight-window.innerHeight)*100;
+    document.getElementById('bar').style.width=p+'%';
+  });
+  const io=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}
+    });
+  },{threshold:0.07,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
