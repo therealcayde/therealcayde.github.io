@@ -152,6 +152,7 @@ h1.hname em{color:var(--acc);font-style:inherit}
   font-size:1rem;line-height:1.9;color:var(--ink2);
   box-shadow:var(--shadow);
 }
+.sumbox p+p{margin-top:1rem}
 
 /* ── EXPERIENCE ── */
 .expwrap{
@@ -228,7 +229,7 @@ h1.hname em{color:var(--acc);font-style:inherit}
   border-radius:4px;padding:0.3rem 0.75rem;margin-bottom:1.2rem;
   letter-spacing:0.04em;
 }
-.ametric::before{content:'↑'}
+.ametric::before{content:'→'}
 .adesc{
   font-size:0.95rem;line-height:1.85;
   color:var(--ink2);margin-bottom:1.5rem;font-weight:300;
@@ -354,6 +355,8 @@ footer{
   section{padding:4rem 0}
   main{padding:0 1.5rem}
   footer{padding:2rem 1.5rem 3rem}
+  .expwrap{padding:1.75rem 1.4rem}
+  .acard{padding:1.75rem 1.5rem}
 }
 @media print{
   nav,#bar{display:none}
@@ -371,7 +374,7 @@ footer{
       <li><a href="#summary">About</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#achievements">Achievements</a></li>
-      <li><a href="#highlights">Edge</a></li>
+      <li><a href="#highlights">Strengths</a></li>
       <li><a href="#stack">Stack</a></li>
       <li><a href="#impact">Impact</a></li>
     </ul>
@@ -399,10 +402,10 @@ footer{
     Distributed Infrastructure
   </p>
   <p class="hbio">
-    4+ years building mission-critical payment infrastructure from the ground up.
-    I work at the intersection of systems programming and financial technology —
-    designing and optimizing the backend systems that process real-money transactions
-    at scale across Visa, Mastercard, and UPI networks on Unix-based infrastructure.
+    I've spent the last four-plus years building the software that sits between a card swipe
+    and a bank's ledger. Most of my work is in C++ and Go on Unix, on payment switches that talk
+    to Visa, Mastercard and UPI — systems where every transaction is real money, so the details
+    matter and downtime isn't an option.
   </p>
   <div class="hmeta">
     <span class="hmeta-i">Bengaluru, India</span>
@@ -414,17 +417,15 @@ footer{
 
 <!-- ── PROFESSIONAL SUMMARY ── -->
 <section id="summary" class="reveal">
-  <p class="slabel">Professional Summary</p>
-  <h2 class="sh">The elevator pitch</h2>
+  <p class="slabel">About Me</p>
+  <h2 class="sh">The short version</h2>
   <div class="sumbox">
-    Results-driven Software Developer with 4+ years of hands-on experience in C++ development
-    within the financial switch and payment processing domain. Proven track record of designing,
-    building, and optimizing mission-critical payment systems integrated with leading networks
-    including Visa, Mastercard, and UPI. Experienced in EFT/POS switch environments, 3D Secure
-    authentication, fraud management, and multi-architecture system development across both
-    microservices and monolithic platforms. Strong command of Unix-based development environments
-    and SQL databases, with a demonstrated ability to translate complex business requirements into
-    scalable, high-performance software solutions.
+    <p>I'm a software developer with over four years of C++ experience in financial switching and
+    payment processing. Most of what I build plugs into Visa, Mastercard and UPI — EFT/POS switching,
+    3D Secure authentication, fraud checks, card personalization, and payments at fuel stations.</p>
+    <p>I've worked on both microservices and long-running monolithic systems, I'm at home in Unix and
+    Oracle, and the part of the job I enjoy most is taking a loosely defined business requirement and
+    turning it into something that runs reliably at volume.</p>
   </div>
 </section>
 
@@ -437,33 +438,33 @@ footer{
     <div class="exp-top">
       <div>
         <p class="exp-co">Volane International</p>
-        <p class="exp-role">Software Developer — C++ / Payments (Senior)</p>
-        <p class="exp-loc">Bangalore, India</p>
+        <p class="exp-role">Senior Software Developer — C++ / Payments</p>
+        <p class="exp-loc">Bengaluru, India</p>
       </div>
       <span class="exp-date">Mar 2022 – Present</span>
     </div>
 
     <p class="subsec">Financial Switch &amp; Payment Processing</p>
     <ul class="blist">
-      <li>Developed and maintained <strong>C++ applications for financial EFT/POS switch systems</strong> serving banks and Oil Marketing Companies, processing high-volume real-time transactions on Unix-based infrastructure.</li>
-      <li>Integrated major payment networks — <strong>Visa, Mastercard, and UPI</strong> — into the core switch platform, ensuring full compliance with network specifications and regulatory mandates.</li>
-      <li>Implemented <strong>3D Secure (EMV 3DS) authentication flow for UPI transactions</strong>, strengthening fraud prevention and measurably reducing chargebacks across the payment ecosystem.</li>
-      <li>Designed and developed a <strong>high-throughput SMS notification engine</strong> and its associated system interfaces, enabling real-time transaction alerts for 100,000+ bank customers across client banks.</li>
-      <li>Built a <strong>complete banking application module for Patronus Bank</strong> using an established C++ framework, delivering end-to-end account management and transaction processing capabilities.</li>
-      <li>Integrated the <strong>Stripe payment gateway</strong> for OMC-specific use cases, enabling digital payment acceptance at fuel retail outlets across India.</li>
-      <li>Developed a <strong>Card Personalization (Card Perso) module</strong> for preparing and issuing payment cards — handling card data encoding, EMV chip personalization, magnetic stripe writing, and secure key injection workflows in compliance with card scheme requirements.</li>
-      <li>Designed and developed a <strong>Forecourt Controller (FCC) automation system</strong> for fuel station POS environments — enabling automated fuel dispenser control, pump authorization, and seamless end-to-end integration between forecourt hardware and the payment switch for Oil Marketing Company clients.</li>
+      <li>I build and maintain the <strong>C++ applications behind our EFT/POS switch</strong>, which banks and Oil Marketing Companies rely on to process high volumes of real-time transactions on Unix.</li>
+      <li>I integrated <strong>Visa, Mastercard and UPI</strong> into the core switch, working through each network's specifications and regulatory requirements until we were fully compliant.</li>
+      <li>I implemented the <strong>3D Secure (EMV 3DS) authentication flow</strong>, which tightened fraud prevention and cut down on chargebacks for our client banks.</li>
+      <li>I designed and built an <strong>SMS notification engine</strong> and its interfaces, which now sends real-time transaction alerts to more than 100,000 customers across our client banks.</li>
+      <li>I built a <strong>complete banking module for Patronus Bank</strong> on our in-house C++ framework, covering account management and transaction processing end to end.</li>
+      <li>I integrated <strong>Stripe</strong> for our OMC clients so fuel retail outlets across India could accept digital payments.</li>
+      <li>I developed a <strong>Card Personalization (Card Perso) module</strong> that prepares cards for issue — encoding card data, personalizing EMV chips, writing magnetic stripes and handling secure key injection to card scheme requirements.</li>
+      <li>I designed and built a <strong>Forecourt Controller (FCC) automation system</strong> for fuel stations, which controls dispensers, authorizes pumps and connects the forecourt hardware directly to the payment switch.</li>
     </ul>
 
     <hr class="exp-hr">
 
     <p class="subsec">Systems &amp; Infrastructure Engineering</p>
     <ul class="blist">
-      <li>Refactored core <strong>transaction lifecycle shared memory structs</strong> using packing and alignment techniques — eliminating compiler-inserted padding and reducing per-process memory footprint with zero functional change.</li>
-      <li>Successfully <strong>migrated core C++ modules to Golang</strong>, improving modularity and accelerating deployment cycles without service interruption on live production systems.</li>
-      <li>Designed and maintained <strong>Oracle database schemas, stored procedures, and query optimizations</strong> for high-throughput transactional workloads in the payment switch.</li>
-      <li>Delivered <strong>end-to-end backend architecture for 6 OMC pilot projects</strong> from scratch — owning system design, API contracts, database schemas, and production deployment for all six simultaneously.</li>
-      <li>Maintained <strong>multi-process Unix architecture with shared memory IPC</strong>, including process lifecycle management, crash recovery, and inter-process communication patterns in a 24/7 financial environment.</li>
+      <li>I reworked the <strong>shared memory structs used across the transaction lifecycle</strong>, reordering and packing fields to remove compiler padding. Each process now uses less memory, and nothing about its behaviour changed.</li>
+      <li>I <strong>migrated core C++ modules to Go</strong> on live production systems, which made the code easier to work with and sped up our deployments — without interrupting service.</li>
+      <li>I design and maintain <strong>Oracle schemas, stored procedures and queries</strong> for the switch's high-throughput transactional workload.</li>
+      <li>I owned the <strong>backend for 6 OMC pilot projects</strong> running in parallel — system design, API contracts, database schemas and production deployment for each one.</li>
+      <li>I look after a <strong>multi-process Unix architecture built on shared memory IPC</strong>, including process lifecycle, crash recovery and inter-process communication in an environment that runs 24/7.</li>
     </ul>
   </div>
 </section>
@@ -471,12 +472,12 @@ footer{
 <!-- ── ACHIEVEMENTS ── -->
 <section id="achievements" class="reveal">
   <p class="slabel">Key Achievements</p>
-  <h2 class="sh">Work that moved the needle</h2>
+  <h2 class="sh">Work I'm proud of</h2>
 
   <div class="acard">
-    <p class="atitle">Visa, Mastercard &amp; UPI — Delivered in One Release Cycle</p>
-    <div class="ametric">Enabled go-live for 2 new banking clients on schedule</div>
-    <p class="adesc">Delivered complete payment switch integration for Visa, Mastercard, and UPI within a single release cycle — requiring simultaneous handling of three distinct network specifications, compliance requirements, and certification processes. The delivery directly enabled go-live for 2 new banking clients, a milestone most teams spread across multiple quarters.</p>
+    <p class="atitle">Visa, Mastercard &amp; UPI in a Single Release Cycle</p>
+    <div class="ametric">2 new banking clients went live on schedule</div>
+    <p class="adesc">I delivered the switch integration for all three networks in one release cycle, juggling three different specifications, compliance requirements and certification processes at the same time. Getting it done in one go meant two new banking clients could go live on the date they'd planned for.</p>
     <div class="tags">
       <span class="tag">Visa</span><span class="tag">Mastercard</span><span class="tag">UPI</span>
       <span class="tag">ISO 8583</span><span class="tag s">EFT Switch</span><span class="tag s">Compliance</span>
@@ -484,9 +485,9 @@ footer{
   </div>
 
   <div class="acard">
-    <p class="atitle">Struct Alignment &amp; Memory Optimization — Zero Functional Change</p>
-    <div class="ametric">Reduced per-process memory footprint · No regressions</div>
-    <p class="adesc">Eliminated compiler-inserted padding in critical shared memory structs by reordering member variables for natural alignment. Measurably reduced the per-process memory footprint of the financial switch with zero change to functional behaviour — a precise, surgical optimization that required deep understanding of how C++ compilers lay out memory and its downstream effects on long-running financial processes.</p>
+    <p class="atitle">Shrinking Shared Memory Without Changing Behaviour</p>
+    <div class="ametric">Lower per-process memory · No regressions</div>
+    <p class="adesc">The switch's shared memory structs were carrying a lot of padding the compiler had quietly added. I reordered the members for natural alignment, which brought down the memory footprint of every process. Because these structs are shared across long-running financial processes, I had to be certain the layout change had no side effects — and it didn't.</p>
     <div class="tags">
       <span class="tag">C++</span><span class="tag">Struct Alignment</span><span class="tag">Memory Optimization</span>
       <span class="tag">Shared Memory IPC</span><span class="tag s">Performance</span><span class="tag s">Systems Programming</span>
@@ -494,9 +495,9 @@ footer{
   </div>
 
   <div class="acard">
-    <p class="atitle">SMS Notification Engine — Built from Scratch, 100,000+ Bank Customers</p>
-    <div class="ametric">100,000+ customers reached · Real-time transaction alerts</div>
-    <p class="adesc">Designed and built a complete high-throughput SMS notification engine from an empty file — engine logic, system interfaces, and all integration plumbing. Enabled real-time transaction alerts for over 100,000 bank customers and became a core infrastructure component relied upon by every client bank on the platform.</p>
+    <p class="atitle">An SMS Alert Engine Built From Scratch</p>
+    <div class="ametric">100,000+ customers · Real-time transaction alerts</div>
+    <p class="adesc">I designed and built our SMS notification engine from the ground up — the core logic, the system interfaces and all the integration work around it. It now sends real-time transaction alerts to over 100,000 bank customers, and every client bank on the platform uses it.</p>
     <div class="tags">
       <span class="tag">C++</span><span class="tag">SMS Engine</span><span class="tag">System Interfaces</span>
       <span class="tag s">Real-time Notifications</span><span class="tag s">Infrastructure</span>
@@ -504,9 +505,9 @@ footer{
   </div>
 
   <div class="acard">
-    <p class="atitle">C++ → Go Migration — Live Production, Zero Downtime</p>
-    <div class="ametric">Faster deployment cycles · Full behavioural parity · No interruption</div>
-    <p class="adesc">Re-engineered and migrated core C++ communication drivers and POS modules into Go on live production systems — one of the highest-risk engineering undertakings in any organization. Delivered full behavioural parity, improved modularity, and measurably faster deployment cycles, with zero service interruption throughout.</p>
+    <p class="atitle">Moving Production C++ to Go With Zero Downtime</p>
+    <div class="ametric">Faster deployments · Same behaviour · No interruptions</div>
+    <p class="adesc">I rewrote our C++ communication drivers and POS modules in Go and moved them over while the system stayed live. The new modules behave exactly like the old ones, they're easier to maintain, and deployments are noticeably faster. Customers never saw a blip.</p>
     <div class="tags">
       <span class="tag">Go</span><span class="tag">C++</span><span class="tag">POS Modules</span>
       <span class="tag">Legacy Migration</span><span class="tag s">Zero Downtime</span><span class="tag s">Modernization</span>
@@ -514,9 +515,9 @@ footer{
   </div>
 
   <div class="acard">
-    <p class="atitle">Six OMC Pilots — Blank Repo to Production, End-to-End</p>
-    <div class="ametric">6 products · Solo backend ownership · All shipped to production</div>
-    <p class="adesc">Spearheaded backend architecture and full development for 6 high-priority Oil Marketing Company pilot projects simultaneously, each starting from an empty repository. Owned system design, API contracts, database schemas, and production deployment across all six — translating business requirements directly into live systems without a pre-existing playbook.</p>
+    <p class="atitle">Six OMC Pilots, From Empty Repo to Production</p>
+    <div class="ametric">6 products · Backend owned end to end · All in production</div>
+    <p class="adesc">I led the backend for six Oil Marketing Company pilots running at the same time, each starting from an empty repository. I owned the system design, API contracts, database schemas and production rollout for all of them, working directly from business requirements since there was no existing playbook to follow.</p>
     <div class="tags">
       <span class="tag">System Design</span><span class="tag">Backend Architecture</span><span class="tag">OMC</span>
       <span class="tag s">PoC to Production</span><span class="tag s">Technical Ownership</span>
@@ -524,9 +525,9 @@ footer{
   </div>
 
   <div class="acard">
-    <p class="atitle">Forecourt Controller (FCC) Automation — Pump-to-Payment at Fuel Stations</p>
-    <div class="ametric">End-to-end dispenser control · Automated pump authorization · OMC clients</div>
-    <p class="adesc">Designed and developed a Forecourt Controller automation system for fuel station POS environments — one of the most hardware-integrated classes of payment software. The system handles automated fuel dispenser control, pump authorization, and the full integration pipeline between forecourt hardware and the payment switch. Built specifically for Oil Marketing Company clients, it enables seamless, automated payment flows at the pump with no manual intervention at the forecourt layer.</p>
+    <p class="atitle">Forecourt Controller (FCC) — From Pump to Payment</p>
+    <div class="ametric">Dispenser control · Automated pump authorization · OMC clients</div>
+    <p class="adesc">I designed and built a Forecourt Controller system for fuel station POS setups. It controls the dispensers, authorizes pumps and ties the forecourt hardware straight into the payment switch, so a customer can pay at the pump without anyone stepping in manually. Working this close to physical hardware meant handling a lot of edge cases that pure software never runs into.</p>
     <div class="tags">
       <span class="tag">FCC</span><span class="tag">POS</span><span class="tag">Forecourt</span>
       <span class="tag">Fuel Station Automation</span><span class="tag s">OMC</span><span class="tag s">Hardware Integration</span>
@@ -534,9 +535,9 @@ footer{
   </div>
 
   <div class="acard">
-    <p class="atitle">Card Personalization (Card Perso) Module — EMV Chip &amp; Secure Key Injection</p>
-    <div class="ametric">End-to-end card issuance · EMV compliance · Secure key workflows</div>
-    <p class="adesc">Developed a Card Personalization module for the full payment card issuance lifecycle — handling card data encoding, EMV chip personalization, magnetic stripe writing, and secure key injection workflows in compliance with card scheme requirements. Card Perso sits at the intersection of cryptography, hardware security, and payment standards, making it one of the most sensitive and specialized areas of the payments stack.</p>
+    <p class="atitle">Card Personalization — EMV Chips &amp; Secure Key Injection</p>
+    <div class="ametric">End-to-end card issuance · EMV compliant · Secure key handling</div>
+    <p class="adesc">I built a Card Personalization module that covers the full issuance process: encoding card data, personalizing EMV chips, writing magnetic stripes and injecting keys securely, all in line with card scheme requirements. It's work where cryptography, hardware security and payment standards meet, so there's very little room for error.</p>
     <div class="tags">
       <span class="tag">Card Perso</span><span class="tag">EMV</span><span class="tag">Key Injection</span>
       <span class="tag">Card Issuance</span><span class="tag s">Cryptography</span><span class="tag s">Card Schemes</span>
@@ -544,9 +545,9 @@ footer{
   </div>
 
   <div class="acard">
-    <p class="atitle">EMV 3DS Authentication for UPI — Fraud Reduction at the Switch Layer</p>
-    <div class="ametric">Strengthened fraud prevention · Reduced chargebacks</div>
-    <p class="adesc">Implemented the complete 3D Secure (EMV 3DS) authentication flow for UPI transactions — a security layer sitting at the precise boundary of user experience and fraud management. The implementation strengthened fraud prevention across the UPI channel and measurably reduced chargebacks for client banks in the ecosystem.</p>
+    <p class="atitle">EMV 3DS Authentication at the Switch Layer</p>
+    <div class="ametric">Stronger fraud prevention · Fewer chargebacks</div>
+    <p class="adesc">I implemented the complete 3D Secure (EMV 3DS) authentication flow. It sits right where user experience meets fraud control, so it had to be secure without adding friction. The result was better fraud protection and fewer chargebacks for our client banks.</p>
     <div class="tags">
       <span class="tag">EMV 3DS</span><span class="tag">UPI</span><span class="tag">Fraud Management</span>
       <span class="tag s">Authentication</span><span class="tag s">Security</span>
@@ -554,65 +555,65 @@ footer{
   </div>
 </section>
 
-<!-- ── SENIOR EDGE ── -->
+<!-- ── STRENGTHS ── -->
 <section id="highlights" class="reveal">
-  <p class="slabel">Senior-Level Edge</p>
-  <h2 class="sh">What you bring beyond the code</h2>
-  <p class="section-intro">Things every senior fintech engineer owns — but rarely writes down.</p>
+  <p class="slabel">Beyond the Code</p>
+  <h2 class="sh">What I bring to a team</h2>
+  <p class="section-intro">The parts of the job that don't fit neatly into a bullet point.</p>
 
   <div class="bgrid">
     <div class="bcard">
       <div class="bicon">⚡</div>
-      <p class="btitle">Payment Network Specialist</p>
-      <p class="bdesc">Certified-level fluency in Visa, Mastercard, UPI, and ISO 8583 — a compliance-heavy, certification-gated domain that takes years to develop and is rarely found outside dedicated fintech infrastructure teams.</p>
+      <p class="btitle">Payment Networks</p>
+      <p class="bdesc">I've worked hands-on with Visa, Mastercard, UPI and ISO 8583, including their certification processes. It's a domain you mostly learn by doing, and I've had years of doing it.</p>
     </div>
     <div class="bcard">
       <div class="bicon">🔐</div>
-      <p class="btitle">Security &amp; Fraud Domain Depth</p>
-      <p class="bdesc">Implemented EMV 3DS end-to-end and worked directly on fraud management systems — understanding chargeback mechanics, authentication failure modes, and the regulatory obligations surrounding them.</p>
+      <p class="btitle">Security &amp; Fraud</p>
+      <p class="bdesc">Building EMV 3DS end to end and working on fraud management taught me how chargebacks actually happen, where authentication tends to fail, and what regulators expect around both.</p>
     </div>
     <div class="bcard">
       <div class="bicon">🧠</div>
-      <p class="btitle">Low-Level Systems Mastery</p>
-      <p class="bdesc">Struct packing, memory alignment, heap optimization, and shared memory IPC on Unix — the kind of depth most developers never reach. Directly translates to measurable performance gains on high-frequency transaction systems.</p>
+      <p class="btitle">Low-Level Systems</p>
+      <p class="bdesc">I'm comfortable with struct packing, memory alignment and shared memory IPC on Unix. On a high-volume transaction system, small improvements at that level add up quickly.</p>
     </div>
     <div class="bcard">
       <div class="bicon">🔄</div>
-      <p class="btitle">Production Migration Veteran</p>
-      <p class="bdesc">Migrated production C++ systems to Go without downtime — the most politically and technically risky class of engineering work. Built the instinct for managing risk and rollback in always-on, regulated environments.</p>
+      <p class="btitle">Live Migrations</p>
+      <p class="bdesc">Moving production C++ to Go without downtime taught me to plan for rollback first and to treat every change in an always-on, regulated system with care.</p>
     </div>
     <div class="bcard">
       <div class="bicon">🚨</div>
-      <p class="btitle">Production Incident Ownership</p>
-      <p class="bdesc">Senior engineers on payment systems own on-call response, root cause analysis, and post-mortems for transaction failures. A 5-minute outage affects thousands of real transactions — this builds a reliability mindset no classroom replicates.</p>
+      <p class="btitle">Owning Production Issues</p>
+      <p class="bdesc">When transactions fail, I dig in — finding the root cause, fixing it and writing up what happened. A few minutes of downtime can mean thousands of failed payments, so reliability is always front of mind for me.</p>
     </div>
     <div class="bcard">
       <div class="bicon">📐</div>
-      <p class="btitle">Cross-Architecture Experience</p>
-      <p class="bdesc">Hands-on work across both microservices and monolithic architectures in the same domain — a rare combination that gives a grounded, pragmatic view of when each pattern is genuinely appropriate vs. fashionable.</p>
+      <p class="btitle">Both Architectures</p>
+      <p class="bdesc">I've worked on microservices and monoliths in the same domain, so I have a practical sense of when each one actually makes sense rather than which one is in fashion.</p>
     </div>
     <div class="bcard">
       <div class="bicon">🗄️</div>
-      <p class="btitle">Database Engineering at Scale</p>
-      <p class="bdesc">Oracle schema design, stored procedures, and query optimization for high-throughput financial workloads — where a slow query directly translates to delayed settlements, failed transactions, or SLA breaches.</p>
+      <p class="btitle">Databases Under Load</p>
+      <p class="bdesc">I design Oracle schemas, write stored procedures and tune queries for financial workloads, where a slow query can mean delayed settlements or a missed SLA.</p>
     </div>
     <div class="bcard">
       <div class="bicon">🏦</div>
-      <p class="btitle">Banking Client Delivery</p>
-      <p class="bdesc">Delivered complete banking products and integrations for named clients (Patronus Bank, OMC accounts) — fluent in translating bank-side business requirements into spec-compliant, auditable technical systems.</p>
+      <p class="btitle">Working With Banks</p>
+      <p class="bdesc">I've delivered products directly for clients like Patronus Bank and our OMC accounts, so I'm used to turning a bank's business requirements into systems that are compliant and easy to audit.</p>
     </div>
     <div class="bcard">
       <div class="bicon">📋</div>
-      <p class="btitle">Compliance-Grade Documentation</p>
-      <p class="bdesc">Operating in a regulated domain means producing technical specifications, integration runbooks, and API documentation — the institutional knowledge that protects teams during audits and client onboarding.</p>
+      <p class="btitle">Clear Documentation</p>
+      <p class="bdesc">In a regulated space, specs, runbooks and API docs matter. I write them so the team has what it needs during audits and when onboarding a new client.</p>
     </div>
   </div>
 </section>
 
 <!-- ── TECH STACK ── -->
 <section id="stack" class="reveal">
-  <p class="slabel">Technology Arsenal</p>
-  <h2 class="sh">Tools of the trade</h2>
+  <p class="slabel">Tech Stack</p>
+  <h2 class="sh">What I work with</h2>
 
   <div class="tgrid">
     <div class="tgroup">
@@ -674,38 +675,38 @@ footer{
 <!-- ── IMPACT ── -->
 <section id="impact" class="reveal">
   <p class="slabel">Impact by the Numbers</p>
-  <h2 class="sh">Tangible, measurable output</h2>
+  <h2 class="sh">A few numbers</h2>
 
   <div class="mgrid">
     <div class="mcard">
       <div class="mnum">4+</div>
       <div class="msub">Years</div>
-      <div class="mlabel">In fintech &amp; payment infrastructure</div>
+      <div class="mlabel">Building fintech and payment infrastructure</div>
     </div>
     <div class="mcard">
       <div class="mnum">100K+</div>
       <div class="msub">Customers</div>
-      <div class="mlabel">Reached by the SMS engine built from scratch</div>
+      <div class="mlabel">Getting alerts from the SMS engine I built</div>
     </div>
     <div class="mcard">
       <div class="mnum">3</div>
       <div class="msub">Networks</div>
-      <div class="mlabel">Visa, Mastercard &amp; UPI integrated in one release cycle</div>
+      <div class="mlabel">Visa, Mastercard and UPI, integrated in one release</div>
     </div>
     <div class="mcard">
       <div class="mnum">6</div>
       <div class="msub">Products</div>
-      <div class="mlabel">OMC pilots taken from blank repo to production</div>
+      <div class="mlabel">OMC pilots I took from empty repo to production</div>
     </div>
     <div class="mcard">
       <div class="mnum">2</div>
       <div class="msub">Clients</div>
-      <div class="mlabel">New banking clients enabled to go-live</div>
+      <div class="mlabel">New banks that went live on my integration</div>
     </div>
     <div class="mcard">
       <div class="mnum">0</div>
       <div class="msub">Downtime</div>
-      <div class="mlabel">During the C++ → Go production migration</div>
+      <div class="mlabel">During the C++ to Go production migration</div>
     </div>
   </div>
 
@@ -731,17 +732,18 @@ footer{
 </main>
 
 <footer>
-  <span class="fname">Krishna Prasad · Senior Software Developer · Bengaluru, 2025</span>
+  <span class="fname">Krishna Prasad · Senior Software Developer · Bengaluru, 2026</span>
   <div class="flinks">
     <a href="mailto:krishnaprasadr197@gmail.com">Email</a>
-    <a href="https://www.linkedin.com/in/krishnaprasad-r/" target="_blank">LinkedIn</a>
-    <a href="https://github.com/therealcayde" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/krishnaprasad-r/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/therealcayde" target="_blank" rel="noopener">GitHub</a>
   </div>
 </footer>
 
 <script>
   window.addEventListener('scroll',()=>{
-    const p=window.scrollY/(document.body.scrollHeight-window.innerHeight)*100;
+    const max=document.body.scrollHeight-window.innerHeight;
+    const p=max>0?window.scrollY/max*100:0;
     document.getElementById('bar').style.width=p+'%';
   });
   const io=new IntersectionObserver((entries)=>{
